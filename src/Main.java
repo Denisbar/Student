@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Created by Denis on 04.09.2016.
  */
@@ -8,9 +10,11 @@ public class Main
 		Student student = new Student(5);
 		int arrayLength = student.exams;
 		int[] array = new int[arrayLength];
-		array = student.addMark(12, 10, 5, 8, 5);
-
-		float res = student.everegeVal(array);
-
+		ArrayList<Student> students = new ArrayList<>();
+		students.add(new Student(5));
+		students.get(0).addMark(12);
+		students.get(0).addMark(10);
+		students.get(0).addMark(8);
+		System.out.println(students.get(0).everegeVal());
 	}
 }
