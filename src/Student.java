@@ -1,28 +1,31 @@
+import java.util.ArrayList;
+
 /**
  * Created by Denis on 04.09.2016.
  */
 public class Student
 {
 	protected int exams;
+	private ArrayList<Integer> mMarks;
 
 	public Student(int exams)
 	{
 		this.exams = exams; // количество экзаменов
+		mMarks = new ArrayList<>();
 	}
 
-	public int[] addMark(int mark1, int mark2, int mark3, int mark4, int mark5) //добавляем оценку
+	public void addMark(int mark) //добавляем оценку
 	{
-		int[] arr = {mark1, mark2, mark3, mark4, mark5};
-		return arr;
+		mMarks.add(mark);
 	}
 
-	public float everegeVal(int[] array)
+	public float everegeVal()
 	{
 		int sum = 0;
 		int count = 0;
-		for (int i = 0; i < array.length; i++)
+		for (int i = 0; i < mMarks.size(); i++)
 		{
-			sum += array[i];
+			sum += mMarks.get(i);
 			count++;
 		}
 		float result = (float) sum / count;
